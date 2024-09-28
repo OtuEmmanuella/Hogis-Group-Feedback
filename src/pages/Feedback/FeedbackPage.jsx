@@ -3,11 +3,11 @@ import { addDoc, collection } from 'firebase/firestore';
 import { getStorage, ref, uploadString, getDownloadURL } from 'firebase/storage';
 import { Camera, Smile, Meh, Frown, Loader, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { db } from '../firebase/config';
-import Modal from '../components/Modal';
-import styles from "./FeedbackPage.module.css";
+import { db } from '../../firebase/config';
+import Modal from '../../components/Modal';
+import styles from "./Feedbackpage.module.css";
 
-import logoImageUrl from '../assets/hogislogo.JPG';
+import logoImageUrl from '/hogislogo.JPG';
 
 const venues = [
   "Hogis Royale and Apartments",

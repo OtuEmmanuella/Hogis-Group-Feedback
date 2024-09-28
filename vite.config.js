@@ -8,5 +8,13 @@ export default defineConfig({
     host: '0.0.0.0', // Listen on all network interfaces
     port: 8080, // Your desired port
   },
-  assetsInclude: ['**/*.JPG'], // Move this line outside the server object
+  assetsInclude: ['**/*.JPG'],
+  css: {
+    modules: {
+      localsConvention: 'camelCaseOnly'
+    }
+  },
+  resolve: {
+    extensions: ['.js', '.jsx', '.ts', '.tsx', '.json', '.css']
+  }
 });

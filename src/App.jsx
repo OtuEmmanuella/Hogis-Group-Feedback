@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import SplashPage from './pages/SplashPage';
-import FeedbackPage from './pages/FeedbackPage';
+import FeedbackPage from './pages/Feedback/FeedbackPage';
 import './App.css';
 import FeedbackDashboard from './components/Feedback-Dashboard/FeedbackDashboard';
 
