@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import logo from '@public/hogislogo.JPG';
+
 
 const SplashPage = () => {
   const [animationComplete, setAnimationComplete] = useState(false);
@@ -46,7 +46,7 @@ const SplashPage = () => {
   return (
     <div style={containerStyle}>
       <div style={logoContainerStyle}>
-        <img src={logo} alt="Hogis Group Logo" style={logoStyle} />
+        <img src="/hogislogo.JPG" alt="Hogis Group Logo" style={logoStyle} />
         <svg width="100%" height="100%">
           <text 
             x="50%" 
