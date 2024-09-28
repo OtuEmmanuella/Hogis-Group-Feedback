@@ -27,6 +27,8 @@ export default defineConfig({
       input: {
         main: path.resolve(__dirname, 'index.html'),
       },
+      external: ['/hogislogo.JPG'], // Add this line
     },
   },
+  publicDir: 'public', // Ensure this line is present
 });
