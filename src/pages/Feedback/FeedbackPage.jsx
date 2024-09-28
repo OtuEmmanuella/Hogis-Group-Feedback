@@ -8,6 +8,8 @@ import Modal from '../../components/Modal';
 import styles from "./Feedbackpage.module.css";
 
 
+const hogislogo = "/public/images/hogislogo.JPG"; 
+
 const venues = [
   "Hogis Royale and Apartments",
   "Hogis Luxury Suites",
@@ -107,7 +109,7 @@ const FeedbackPage = () => {
         transition={{ duration: 0.5 }}
       >
         <div className={styles.logoContainer}>
-          <img src="/hogislogo.JPG" alt="Hogis Logo" className={styles.logo} />
+          <img src={hogislogo} alt="Hogis Logo" className={styles.logo} />
         </div>
         <h1 className={styles.title}>Share Your Thoughts</h1>
         <form onSubmit={handleSubmit} className={styles.form}>
@@ -213,7 +215,6 @@ const FeedbackPage = () => {
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.8 }}
-                  transition={{ duration: 0.3 }}
                 />
               )}
             </AnimatePresence>
@@ -221,20 +222,16 @@ const FeedbackPage = () => {
           <motion.button 
             type="submit" 
             className={styles.submitButton}
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             disabled={isLoading}
           >
-            {isLoading ? (
-              <Loader className={styles.loader} />
-            ) : (
-              'Submit Feedback'
-            )}
+            {isLoading ? <Loader className={styles.loaderIcon} /> : "Submit Feedback"}
           </motion.button>
         </form>
       </motion.div>
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-        <h2>{modalMessage}</h2>
+        {modalMessage}
       </Modal>
     </div>
   );
