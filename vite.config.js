@@ -28,4 +28,7 @@ export default defineConfig({
     },
   },
   publicDir: 'public',
+  define: {
+    'process.env': {}
+  },
 });
