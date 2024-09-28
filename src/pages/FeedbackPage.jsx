@@ -5,7 +5,7 @@ import { Camera, Smile, Meh, Frown, Loader, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { db } from '../firebase/config';
 import Modal from '../components/Modal';
-import styles from "../pages/feedbackpage.module.css";
+import styles from "./FeedbackPage.module.css";
 
 import logoImageUrl from '../assets/hogislogo.JPG';
 
