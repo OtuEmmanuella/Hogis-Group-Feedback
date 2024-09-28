@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import logo from '../assets/IMG_9763.JPG?url'; // Adjust the import path based on your folder structure
 
 const SplashPage = () => {
   const [animationComplete, setAnimationComplete] = useState(false);
@@ -32,41 +33,48 @@ const SplashPage = () => {
     bottom: 0,
   };
 
+  const logoContainerStyle = {
+    textAlign: 'center',
+  };
+
   const logoStyle = {
+    width: '200px', // Adjust as needed
+    height: 'auto',
     animation: 'fadeInOut 3s forwards, pulse 2s infinite',
   };
 
   return (
     <div style={containerStyle}>
-    <div style={logoStyle}>
-      <svg viewBox="0 0 200 100" width="200" height="100"> {/* Increased viewBox width */}
-        <text 
-          x="50%" 
-          y="50%" 
-          dominantBaseline="middle" 
-          textAnchor="middle" 
-          fontSize="24" 
-          fill="white"
-          style={{ whiteSpace: 'nowrap' }} // Prevent line breaks
-        >
-          Uber
-        </text>
-      </svg>
+      <div style={logoContainerStyle}>
+        <img src={logo} alt="Hogis Group Logo" style={logoStyle} />
+        <svg width="100%" height="100%">
+          <text 
+            x="50%" 
+            y="50%" 
+            dominantBaseline="middle" 
+            textAnchor="middle" 
+            fontSize="18" 
+            fontWeight={700} 
+            fill="#DAA520"
+            style={{ whiteSpace: 'nowrap' }} // Prevent line breaks
+          >
+            {/* Hogis Group */}
+          </text>
+        </svg>
+      </div>
+      <style>
+        {`
+          @keyframes fadeInOut {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+          }
+          @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+          }
+        `}
+      </style>
     </div>
-    <style>
-      {`
-        @keyframes fadeInOut {
-          0%, 100% { opacity: 0; }
-          50% { opacity: 1; }
-        }
-        @keyframes pulse {
-          0%, 100% { transform: scale(1); }
-          50% { transform: scale(1.1); }
-        }
-      `}
-    </style>
-  </div>
-  
   );
 };
 

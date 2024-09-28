@@ -10,7 +10,7 @@ import styles from "./FeedbackPage.module.css";
 import logoImageUrl from '../assets/IMG_9763.JPG?url';
 
 const venues = [
-  "Hogis Royale and Apartment",
+  "Hogis Royale and Apartments",
   "Hogis Luxury Suites",
   "Hogis Exclusive Suites",
   "Club Voltage",

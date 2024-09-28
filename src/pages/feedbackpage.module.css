@@ -11,7 +11,7 @@ html, body {
 body {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 1.4;
 }
 
 .feedbackPage {
@@ -38,7 +38,7 @@ body {
 }
 
 .logo {
-  max-width: 70px;
+  max-width: 50px;
   height: auto;
   border-radius: 7px;
 }
