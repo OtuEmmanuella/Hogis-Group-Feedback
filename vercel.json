@@ -8,6 +8,8 @@
     ],
     "routes": [
       { "handle": "filesystem" },
-      { "src": "/[^.]+", "dest": "/" }
+      { "src": "/assets/(.*)", "dest": "/assets/$1" },
+      { "src": "/images/(.*)", "dest": "/images/$1" },
+      { "src": "/(.*)", "dest": "/index.html" }
     ]
   }

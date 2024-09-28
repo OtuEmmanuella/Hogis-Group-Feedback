@@ -8,19 +8,10 @@ export default defineConfig({
     host: '0.0.0.0',
     port: 8080,
   },
-  assetsInclude: ['**/*.JPG', '**/*.jpg', '**/*.png', '**/*.svg'],
-  css: {
-    modules: {
-      localsConvention: 'camelCaseOnly'
-    }
-  },
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, './src'),
-    },
-  },
   build: {
+    outDir: 'dist',
     assetsDir: 'assets',
+    emptyOutDir: true,
     rollupOptions: {
       input: {
         main: path.resolve(__dirname, 'index.html'),
@@ -28,7 +19,11 @@ export default defineConfig({
     },
   },
   publicDir: 'public',
-  define: {
-    'process.env': {}
+  base: '/',
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+    },
   },
+  assetsInclude: ['**/*.png', '**/*.jpg', '**/*.jpeg', '**/*.gif', '**/*.svg', '**/*.JPG'],
 });
