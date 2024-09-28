@@ -108,7 +108,7 @@ const FeedbackPage = () => {
         transition={{ duration: 0.5 }}
       >
         <div className={styles.logoContainer}>
-          <img src="/public/images/hogislogo.JPG" alt="Hogis Logo" className={styles.logo} />
+          <img src="/images/Hogis.png" alt="Hogis Logo" className={styles.logo} />
         </div>
         <h1 className={styles.title}>Share Your Thoughts</h1>
         <form onSubmit={handleSubmit} className={styles.form}>

@@ -46,7 +46,7 @@ const SplashPage = () => {
   return (
     <div style={containerStyle}>
       <div style={logoContainerStyle}>
-        <img src="/public/images/hogislogo.JPG" alt="Hogis Group Logo" style={logoStyle} />
+        <img src="/images/Hogis.png" alt="Hogis Group Logo" style={logoStyle} />
         <svg width="100%" height="100%">
           <text 
             x="50%" 
