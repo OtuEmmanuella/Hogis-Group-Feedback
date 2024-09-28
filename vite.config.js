@@ -6,8 +6,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     host: '0.0.0.0', // Listen on all network interfaces
-    port: 8080,     
-    assetsInclude: ['**/*.JPG'], // Add this line
-    // Your desired port
-  }
+    port: 8080, // Your desired port
+  },
+  assetsInclude: ['**/*.JPG'], // Move this line outside the server object
 });

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import logo from '../assets/IMG_9763.JPG?url'; // Adjust the import path based on your folder structure
+import logo from '../assets/hogislogo.JPG'
 
 const SplashPage = () => {
   const [animationComplete, setAnimationComplete] = useState(false);

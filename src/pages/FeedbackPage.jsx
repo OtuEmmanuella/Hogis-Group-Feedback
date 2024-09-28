@@ -7,7 +7,7 @@ import { db } from '../firebase/config';
 import Modal from '../components/Modal';
 import styles from "./FeedbackPage.module.css";
 
-import logoImageUrl from '../assets/IMG_9763.JPG?url';
+import logoImageUrl from '../assets/hogislogo.JPG';
 
 const venues = [
   "Hogis Royale and Apartments",
