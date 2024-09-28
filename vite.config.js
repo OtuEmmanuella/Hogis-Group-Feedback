@@ -5,8 +5,8 @@ import path from 'path';
 export default defineConfig({
   plugins: [react()],
   server: {
-    host: '0.0.0.0', // Listen on all network interfaces
-    port: 8080, // Your desired port
+    host: '0.0.0.0',
+    port: 8080,
   },
   assetsInclude: ['**/*.JPG', '**/*.jpg', '**/*.png', '**/*.svg'],
   css: {
@@ -17,9 +17,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
-      '@public': path.resolve(__dirname, './public'),
     },
-    extensions: ['.js', '.jsx', '.ts', '.tsx', '.json', '.css']
   },
   build: {
     assetsDir: 'assets',
@@ -27,8 +25,7 @@ export default defineConfig({
       input: {
         main: path.resolve(__dirname, 'index.html'),
       },
-      external: ['/hogislogo.JPG'], // Add this line
     },
   },
-  publicDir: 'public', // Ensure this line is present
+  publicDir: 'public',
 });
