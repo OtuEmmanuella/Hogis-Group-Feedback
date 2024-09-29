@@ -50,7 +50,7 @@ const SplashPage = () => {
           <p style={{ color: 'red' }}>Image failed to load.</p>
         ) : (
           <img
-            src="/Hogis.jpg" // Ensure this points to the public folder
+            src="https://marketplace.canva.com/EAFauoQSZtY/1/0/1600w/canva-brown-mascot-lion-free-logo-qJptouniZ0A.jpg" // Ensure this points to the public folder
             alt="Hogis Logo"
             style={logoStyle}
             onError={() => setImageError(true)}
