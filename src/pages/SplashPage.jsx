@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import logo from '/tanzania.png'
+import logo from '/Hogis.jpg'
 
 
 const SplashPage = () => {

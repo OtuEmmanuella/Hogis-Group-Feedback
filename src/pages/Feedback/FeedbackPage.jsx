@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { db } from '../../firebase/config';
 import Modal from '../../components/Modal';
 import styles from "./Feedbackpage.module.css";
-import logotanzania from '/tanzania.png'
+import hogislogo from '/Hogis.jpg'
 
 
 
@@ -109,7 +109,7 @@ const FeedbackPage = () => {
         transition={{ duration: 0.5 }}
       >
         <div className={styles.logoContainer}>
-      <img src={logotanzania} alt="Hogis Logo" className={styles.logo} />
+      <img src={hogislogo} alt="Hogis Logo" className={styles.logo} />
         </div>
         <h1 className={styles.title}>Share Your Thoughts</h1>
         <form onSubmit={handleSubmit} className={styles.form}>
