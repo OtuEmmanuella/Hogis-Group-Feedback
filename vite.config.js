@@ -21,4 +21,9 @@ export default defineConfig({
       '@': resolve(__dirname, 'src'),
     },
   },
+  server: {
+    host: true, // This makes the server accessible on the network
+    port: 3000, // Use port 3000 for the development server
+    open: true, // Automatically open the app in the browser
+  },
 });
