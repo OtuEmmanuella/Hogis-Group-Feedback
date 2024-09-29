@@ -11,12 +11,13 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: path.resolve(__dirname, 'index.html'),
+        images: path.resolve(__dirname, 'src/assets/Hogis.png'), // Include the path to the images
       },
     },
   },
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
+      '@': path.resolve(__dirname, './src'), // Your alias
     },
   },
   server: {

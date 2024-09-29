@@ -4,5 +4,9 @@
     "framework": "vite",
     "rewrites": [
       { "source": "/(.*)", "destination": "/index.html" }
-    ]
+    ],
+    "cache": {
+      "enabled": false 
+    }
   }
+  
