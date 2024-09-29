@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import logo from '/tanzania.png'
+
 
 const SplashPage = () => {
   const [animationComplete, setAnimationComplete] = useState(false);
@@ -50,7 +52,7 @@ const SplashPage = () => {
           <p style={{ color: 'red' }}>Image failed to load.</p>
         ) : (
           <img
-            src="https://marketplace.canva.com/EAFauoQSZtY/1/0/1600w/canva-brown-mascot-lion-free-logo-qJptouniZ0A.jpg" // Ensure this points to the public folder
+            src={logo}// Ensure this points to the public folder
             alt="Hogis Logo"
             style={logoStyle}
             onError={() => setImageError(true)}

@@ -3,5 +3,7 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  // Remove the build.rollupOptions.external configuration
+  build: {
+    outDir: 'dist',  // Ensure build output is in 'dist'
+  },
 });
