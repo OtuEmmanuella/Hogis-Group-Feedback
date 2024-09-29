@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import logo from '/Hogis.jpg'
+import '../pages/AnimatedSplashPageScreen.module.css'
 
 
 const SplashPage = () => {
@@ -52,7 +53,7 @@ const SplashPage = () => {
           <p style={{ color: 'red' }}>Image failed to load.</p>
         ) : (
           <img
-            src={logo}// Ensure this points to the public folder
+            src={logo}
             alt="Hogis Logo"
             style={logoStyle}
             onError={() => setImageError(true)}
