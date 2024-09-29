@@ -1,17 +1,11 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import path from 'path';
 
 export default defineConfig({
   plugins: [react()],
-  base: '/',
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, './src'), // Your alias
+  build: {
+    rollupOptions: {
+      external: ['/Hogis.jpg'], // Add the path to your image here
     },
-  },
-  server: {
-    host: true,
-    port: 3000,
   },
 });
