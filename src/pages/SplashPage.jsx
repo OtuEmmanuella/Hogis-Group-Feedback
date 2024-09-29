@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import HogisImage from '../assets/Hogis.png';
 
 
 const SplashPage = () => {
@@ -46,7 +47,7 @@ const SplashPage = () => {
   return (
     <div style={containerStyle}>
       <div style={logoContainerStyle}>
-        <img src="/images/Hogis.png" alt="Hogis Group Logo" style={logoStyle} />
+      <img src={HogisImage} alt="Hogis Group Logo" style={logoStyle} />
         <svg width="100%" height="100%">
           <text 
             x="50%" 
