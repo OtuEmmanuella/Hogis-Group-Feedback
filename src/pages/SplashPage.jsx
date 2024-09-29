@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import SplashImage from "/Hogis.jpg"
-
-
 
 const SplashPage = () => {
   const [animationComplete, setAnimationComplete] = useState(false);
+  const [imageError, setImageError] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -48,21 +46,16 @@ const SplashPage = () => {
   return (
     <div style={containerStyle}>
       <div style={logoContainerStyle}>
-      <img src={SplashImage} alt="Hogis Logo" style={logoStyle} />
-      <svg width="100%" height="100%">
-          <text 
-            x="50%" 
-            y="50%" 
-            dominantBaseline="middle" 
-            textAnchor="middle" 
-            fontSize="18" 
-            fontWeight={700} 
-            fill="#DAA520"
-            style={{ whiteSpace: 'nowrap' }} 
-          >
-           
-          </text>
-        </svg>
+        {imageError ? (
+          <p style={{ color: 'red' }}>Image failed to load.</p>
+        ) : (
+          <img
+            src="/Hogis.jpg" // Ensure this points to the public folder
+            alt="Hogis Logo"
+            style={logoStyle}
+            onError={() => setImageError(true)}
+          />
+        )}
       </div>
       <style>
         {`
