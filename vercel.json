@@ -5,7 +5,7 @@
     "routes": [
       { "handle": "filesystem" },
       { "src": "/assets/(.*)", "dest": "/assets/$1" },
-      { "src": "/images/Hogis.png", "dest": "/images/Hogis.png" },
+      { "src": "/images/(.*)", "dest": "/images/$1" },
       { "src": "/(.*)", "dest": "/index.html" }
     ]
   }
