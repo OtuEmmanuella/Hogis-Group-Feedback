@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import HogisImage from '../assets/Hogis.png';
+import SplashImage from "/images/Hogis.png"
+
 
 
 const SplashPage = () => {
@@ -10,7 +11,7 @@ const SplashPage = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setAnimationComplete(true);
-    }, 3000); // Duration of the splash animation
+    }, 3000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -39,7 +40,7 @@ const SplashPage = () => {
   };
 
   const logoStyle = {
-    width: '200px', // Adjust as needed
+    width: '200px',
     height: 'auto',
     animation: 'fadeInOut 3s forwards, pulse 2s infinite',
   };
@@ -47,7 +48,7 @@ const SplashPage = () => {
   return (
     <div style={containerStyle}>
       <div style={logoContainerStyle}>
-      <img src={HogisImage} alt="Hogis Group Logo" style={logoStyle} />
+      <img src={SplashImage} alt="Hogis Logo" className={styles.logo} />
         <svg width="100%" height="100%">
           <text 
             x="50%" 
@@ -57,9 +58,9 @@ const SplashPage = () => {
             fontSize="18" 
             fontWeight={700} 
             fill="#DAA520"
-            style={{ whiteSpace: 'nowrap' }} // Prevent line breaks
+            style={{ whiteSpace: 'nowrap' }} 
           >
-            {/* Hogis Group */}
+           
           </text>
         </svg>
       </div>

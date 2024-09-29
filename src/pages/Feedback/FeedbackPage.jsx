@@ -6,7 +6,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { db } from '../../firebase/config';
 import Modal from '../../components/Modal';
 import styles from "./Feedbackpage.module.css";
-import HogisImage from '../../assets/Hogis.png';
+import Logo from "/images/Hogis.png"
+
 
 
 const venues = [
@@ -108,7 +109,7 @@ const FeedbackPage = () => {
         transition={{ duration: 0.5 }}
       >
         <div className={styles.logoContainer}>
-          <img src={HogisImage} alt="Hogis Logo" className={styles.logo} />
+        <img src={Logo} alt="Hogis Logo" className={styles.logo} />
         </div>
         <h1 className={styles.title}>Share Your Thoughts</h1>
         <form onSubmit={handleSubmit} className={styles.form}>
