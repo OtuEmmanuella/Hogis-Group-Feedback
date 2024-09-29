@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import SplashImage from "/images/Hogis.png"
+import SplashImage from "/Hogis.jpg"
 
 
 
@@ -48,8 +48,8 @@ const SplashPage = () => {
   return (
     <div style={containerStyle}>
       <div style={logoContainerStyle}>
-      <img src={SplashImage} alt="Hogis Logo" className={styles.logo} />
-        <svg width="100%" height="100%">
+      <img src={SplashImage} alt="Hogis Logo" style={logoStyle} />
+      <svg width="100%" height="100%">
           <text 
             x="50%" 
             y="50%" 

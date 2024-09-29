@@ -1,19 +1,30 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "src/main.jsx",
-        "use": "@vercel/static-build",
-        "config": {
-          "distDir": "dist"
-        }
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist",
+        "buildCommand": "npm run build"
       }
-    ],
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "/index.html"
-      }
-    ]
+    }
+  ],
+  "routes": [
+    {
+      "src": "/Hogis.jpg",
+      "headers": { "cache-control": "public, max-age=31536000, immutable" },
+      "dest": "/Hogis.jpg"
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ],
+  "github": {
+    "silent": true
   }
-  
+}
