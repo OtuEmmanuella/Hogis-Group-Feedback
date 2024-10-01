@@ -75,7 +75,7 @@ const FeedbackDashboard = () => {
 
   const analyzeKeywords = (feedbacks) => {
     const keywords = {};
-    const commonKeywords = ['Food', 'food', 'room', 'noise', 'smoking', 'staffs', 'professional', 'service', 'product', 'quality', 'price', 'support', 'experience', 'recommendation', 'value', 'delivery', 'variety'];
+    const commonKeywords = ['Food', 'food', 'room', 'noise', 'Worst', 'smoking', 'staffs', 'professional', 'service', 'product', 'quality', 'price', 'support', 'experience', 'recommendation', 'value', 'delivery', 'variety'];
 
     feedbacks.forEach(feedback => {
       const text = feedback.feedback.toLowerCase();

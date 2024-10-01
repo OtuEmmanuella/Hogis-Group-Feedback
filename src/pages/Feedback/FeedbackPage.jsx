@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { db } from '../../firebase/config';
 import Modal from '../../components/Modal';
 import styles from "./Feedbackpage.module.css";
-import hogislogo from '/Hogis.jpg'
+import hogislogo from '/hogisgroup.png'
 
 
 

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import logo from '/Hogis.jpg';
+import logo from '/hogisgroup.png';
 import '../pages/AnimatedSplashPageScreen.module.css';
 
 const SplashPage = () => {

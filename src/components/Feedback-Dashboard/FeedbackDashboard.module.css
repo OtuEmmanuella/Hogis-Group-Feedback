@@ -211,6 +211,11 @@ body {
   transition: all 0.3s ease;
 }
 
+.feedbackEmail {
+ text-decoration: 0;
+ border: none;
+}
+
 .feedbackImage:hover {
   transform: scale(1.05);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -325,3 +330,4 @@ body {
 .feedbackItem:nth-child(even) {
   background-color: #ffffff;
 }
+
