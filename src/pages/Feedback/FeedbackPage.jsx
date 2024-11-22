@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { addDoc, collection } from 'firebase/firestore';
+import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 import { ref, uploadString, getDownloadURL } from 'firebase/storage';
 import { Camera, ChevronDown, Loader } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -80,9 +80,25 @@ const FeedbackPage = () => {
       await addDoc(collection(db, 'feedback'), {
         ...formData,
         photoURL,
-        createdAt: new Date(),
+        createdAt: serverTimestamp(), 
         userId: auth.currentUser.uid
       });
+
+      const response = await fetch('/.netlify/functions/sendFeedbackEmail', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          ...formData,
+          photoURL
+        })
+      });
+  
+      if (!response.ok) {
+        throw new Error('Email notification failed');
+      }
+  
 
       setModalMessage('Feedback submitted successfully!');
       setIsModalOpen(true);
