@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 import { ref, uploadString, getDownloadURL } from 'firebase/storage';
 import { Camera, ChevronDown, Loader } from 'lucide-react';
@@ -16,6 +16,10 @@ const venues = [
   "Club Voltage",
   "Hogis Cinema"
 ];
+
+const API_URL = import.meta.env.PROD 
+  ? '/.netlify/functions/sendFeedbackEmail'
+  : 'http://localhost:8888/.netlify/functions/sendFeedbackEmail';
 
 const FeedbackPage = () => {
   const [formData, setFormData] = useState({
@@ -84,7 +88,7 @@ const FeedbackPage = () => {
         userId: auth.currentUser.uid
       });
 
-      const response = await fetch('/.netlify/functions/sendFeedbackEmail', {
+      const response = await fetch(API_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -96,14 +100,13 @@ const FeedbackPage = () => {
       });
   
       if (!response.ok) {
-        throw new Error('Email notification failed');
+        const errorData = await response.json();
+        throw new Error(errorData.message || 'Email notification failed');
       }
-  
 
       setModalMessage('Feedback submitted successfully!');
       setIsModalOpen(true);
 
-      // Play success audio
       const audio = new Audio('/hogis successful audio.wav');
       audio.play().catch(error => {
         console.error("Audio play failed:", error);
