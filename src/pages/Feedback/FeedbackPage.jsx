@@ -17,9 +17,7 @@ const venues = [
   "Hogis Cinema"
 ];
 
-const API_URL = import.meta.env.PROD 
-  ? '/.netlify/functions/sendFeedbackEmail'
-  : 'http://localhost:8888/.netlify/functions/sendFeedbackEmail';
+const API_URL = '/api/sendFeedbackEmail';
 
 const FeedbackPage = () => {
   const [formData, setFormData] = useState({
