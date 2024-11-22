@@ -20,5 +20,11 @@
   status = 200
   force = true
 
+# Add this new redirect rule for client-side routing
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
 [build.environment]
   NODE_VERSION = "18"
