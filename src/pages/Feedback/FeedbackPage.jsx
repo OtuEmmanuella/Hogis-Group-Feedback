@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { db, storage, auth } from '../../firebase/config';
 import Modal from '../../components/Modal';
 import ReactionButton from '../../components/ReactionButton';
-import styles from './FeedbackPage.module.css';
+import styles from './feedbackStyles/FeedbackPage.module.css';
 import hogislogo from '/hogisgroup.png';
 
 const venues = [
