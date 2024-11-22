@@ -1,4 +1,4 @@
-const nodemailer = require('nodemailer');
+import nodemailer from 'nodemailer';
 
 // Add timestamp to logs
 const log = (message, data = '') => {
@@ -32,7 +32,8 @@ const sanitizeInput = (input) => {
   });
 };
 
-exports.handler = async (event, context) => {
+// Use ESM syntax for the handler export
+export async function handler(event, context) {
   log('Function invoked', { httpMethod: event.httpMethod });
   
   const headers = {
@@ -159,4 +160,4 @@ exports.handler = async (event, context) => {
       })
     };
   }
-};
+}
