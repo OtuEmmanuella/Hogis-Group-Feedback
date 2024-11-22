@@ -17,8 +17,12 @@ const venues = [
   "Hogis Cinema"
 ];
 
-const API_URL = '/api/sendFeedbackEmail';
+// Update the API URL to use the full Netlify function URL in production
+const API_URL = process.env.NODE_ENV === 'production' 
+  ? '/.netlify/functions/sendFeedbackEmail' 
+  : '/.netlify/functions/sendFeedbackEmail';
 
+  
 const FeedbackPage = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -88,27 +92,33 @@ const FeedbackPage = () => {
 
       const response = await fetch(API_URL, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          ...formData,
-          photoURL
-        })
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...formData, photoURL }),
       });
-  
+      
       if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.message || 'Email notification failed');
+        const contentType = response.headers.get('Content-Type');
+        let errorMessage = 'An error occurred. Please try again.';
+        if (contentType && contentType.includes('application/json')) {
+          const errorData = await response.json();
+          errorMessage = errorData.message || errorMessage;
+        } else {
+          console.error('Unexpected response format:', await response.text());
+        }
+        throw new Error(errorMessage);
       }
+      
 
       setModalMessage('Feedback submitted successfully!');
       setIsModalOpen(true);
 
       const audio = new Audio('/hogis successful audio.wav');
+      audio.pause();
+      audio.currentTime = 0;
       audio.play().catch(error => {
         console.error("Audio play failed:", error);
       });
+      
 
       setFormData({
         name: '',
