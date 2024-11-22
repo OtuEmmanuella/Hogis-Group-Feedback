@@ -12,6 +12,27 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
       },
+      output: {
+        manualChunks: {
+          'vendor-react': ['react', 'react-dom', 'react-router-dom'],
+          'vendor-firebase': [
+            'firebase/app',
+            'firebase/firestore',
+            'firebase/storage',
+            'firebase/auth'
+          ],
+          'vendor-ui': ['framer-motion', 'lucide-react'],
+          'components': [
+            './src/components/Modal.jsx',
+            './src/components/ReactionButton.jsx',
+            './src/components/Feedback-Dashboard/FeedbackDashboard.jsx'
+          ],
+          'pages': [
+            './src/pages/Feedback/FeedbackPage.jsx',
+            './src/pages/SplashPage.jsx'
+          ]
+        }
+      }
     },
     copyPublicDir: true,
   },
@@ -22,8 +43,8 @@ export default defineConfig({
     },
   },
   server: {
-    host: true, // This makes the server accessible on the network
-    port: 3000, // Use port 3000 for the development server
-    open: true, // Automatically open the app in the browser
+    host: true,
+    port: 3000,
+    open: true,
   },
 });
