@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import logo from '/hogisgroup.png';
 import '../pages/AnimatedSplashPageScreen.module.css';
 
 const SplashPage = () => {
@@ -22,42 +21,20 @@ const SplashPage = () => {
     }
   }, [animationComplete, navigate]);
 
-  const containerStyle = {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'flex-start', 
-    height: '100vh',
-    width: '100vw', 
-    backgroundColor: '#000',
-    position: 'fixed',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    paddingTop: '30vh', 
-  };
-
-  const logoContainerStyle = {
-    textAlign: 'center',
-    width: '100%', 
-  };
-
   const logoStyle = {
-    width: '50%', 
-    maxWidth: '200px', 
-    height: 'auto',
     animation: 'fadeInOut 3s forwards, pulse 2s infinite',
   };
 
   return (
-    <div style={containerStyle}>
-      <div style={logoContainerStyle}>
+    <div className="fixed inset-0 flex items-center justify-center bg-black">
+      <div className="text-center">
         {imageError ? (
-          <p style={{ color: 'red' }}>Image failed to load.</p>
+          <p className="text-red-500">Image failed to load.</p>
         ) : (
           <img
-            src={logo}
+            src="https://res.cloudinary.com/dzrnkgvts/image/upload/v1740057260/Hogis_Group_Logo_2-removebg_iokit5.png"
             alt="Hogis Logo"
+            className="w-1/2 max-w-[200px] h-auto"
             style={logoStyle}
             onError={() => setImageError(true)}
           />

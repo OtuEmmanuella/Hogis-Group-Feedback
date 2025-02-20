@@ -43,14 +43,14 @@ export default defineConfig({
     },
   },
   server: {
-    host: true,
-    port: 3000,
-    open: true,
+    host: 'localhost',
+    port: 3001,
     proxy: {
       '/api': {
-        target: 'http://localhost:9999',
+        target: 'http://localhost:8888/.netlify/functions',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, '/.netlify/functions')
+        secure: false,
+        rewrite: (path) => path.replace(/^\/api/, '')
       }
     }
   },
