@@ -37,6 +37,7 @@ const FeedbackPage = () => {
   const [modalMessage, setModalMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [isVenueDropdownOpen, setIsVenueDropdownOpen] = useState(false);
+  const [submittedName, setSubmittedName] = useState('');
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -159,16 +160,19 @@ const FeedbackPage = () => {
         throw new Error(errorMessage);
       }
 
-      setModalMessage('Feedback submitted successfully!');
+      setModalMessage("Your feedback is valuable to us. We'll review it right away!");
+      setSubmittedName(formData.name);
       setIsModalOpen(true);
-
+      
+      // Play success sound
       const audio = new Audio('/hogis successful audio.wav');
       audio.pause();
       audio.currentTime = 0;
-      audio.play().catch(error => {
+      await audio.play().catch(error => {
         console.error("Audio play failed:", error);
       });
-
+    
+      // Reset form
       setFormData({
         name: '',
         email: '',
@@ -179,6 +183,7 @@ const FeedbackPage = () => {
         photo: null,
         audio: null
       });
+
     } catch (error) {
       console.error('Error submitting feedback:', error);
       setModalMessage(
@@ -383,9 +388,12 @@ const FeedbackPage = () => {
         </div>
       </motion.div>
 
-      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-        {modalMessage}
-      </Modal>
+      <Modal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+        message={modalMessage}
+        userName={submittedName}
+      />
     </div>
   );
 };

@@ -5,6 +5,21 @@ import { resolve } from 'path';
 export default defineConfig({
   plugins: [react()],
   base: '/',
+  optimizeDeps: {
+    include: [
+      'canvas-confetti',
+      'react',
+      'react-dom',
+      'react-router-dom',
+      'firebase/app',
+      'firebase/firestore',
+      'firebase/storage',
+      'firebase/auth',
+      'framer-motion',
+      'lucide-react'
+    ],
+    force: true
+  },
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
@@ -21,7 +36,7 @@ export default defineConfig({
             'firebase/storage',
             'firebase/auth'
           ],
-          'vendor-ui': ['framer-motion', 'lucide-react'],
+          'vendor-ui': ['framer-motion', 'lucide-react', 'canvas-confetti'],
           'components': [
             './src/components/Modal.jsx',
             './src/components/ReactionButton.jsx',
@@ -40,11 +55,18 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src'),
-    },
+    }
   },
   server: {
     host: 'localhost',
     port: 3001,
+    hmr: {
+      overlay: false
+    },
+    watch: {
+      usePolling: true,
+      interval: 1000
+    },
     proxy: {
       '/api': {
         target: 'http://localhost:8888/.netlify/functions',
@@ -54,4 +76,7 @@ export default defineConfig({
       }
     }
   },
+  esbuild: {
+    logOverride: { 'this-is-undefined-in-esm': 'silent' }
+  }
 });
