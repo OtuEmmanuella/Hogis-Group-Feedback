@@ -15,7 +15,7 @@ import VoiceRecorder from './voice-recorder';
 const venues = [
    "Hogis Luxury Suites",
   "Hogis Royale and Apartments",
-  "Hogis King's-Court",
+  "Hogis King's Court",
 ];
 
 const API_URL = process.env.NODE_ENV === 'production' 
